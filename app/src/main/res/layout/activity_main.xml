@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp"
+    android:orientation="vertical"
+    tools:context="com.example.asjie.homework4.MainActivity"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회전 방향 선택" />
+
+    <RadioGroup
+        android:id="@+id/rg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/clock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시계방향" />
+
+        <RadioButton
+            android:id="@+id/coclock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="반시계방향" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="회전 각도 선택" />
+
+    <RadioGroup
+        android:id="@+id/rg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/ro15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15" />
+
+        <RadioButton
+            android:id="@+id/ro30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30" />
+
+        <RadioButton
+            android:id="@+id/ro45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45" />
+
+        <RadioButton
+            android:id="@+id/ro90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/ent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회전"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/init"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="초기화" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.57"
+        android:src="@mipmap/ic_launcher" />
+
+
+</LinearLayout>
