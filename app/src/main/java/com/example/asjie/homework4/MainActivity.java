@@ -18,21 +18,24 @@ public class MainActivity extends AppCompatActivity {
     ImageView img;
 
     int ro=0;
+
+    boolean to=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rg1 = (RadioGroup)findViewById(R.id.rg1);
         rg2 = (RadioGroup)findViewById(R.id.rg2);
-        ent= (Button)findViewById(R.id.ent);
+        ent = (Button)findViewById(R.id.ent);
         init = (Button)findViewById(R.id.init);
-        img=(ImageView)findViewById(R.id.img);
+        img = (ImageView)findViewById(R.id.img);
 
         rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-               if(rg2.getCheckedRadioButtonId()==-1)
-                   Toast.makeText(getApplicationContext(),"각도를 선택 해주세요",Toast.LENGTH_SHORT).show();
+                if(rg2.getCheckedRadioButtonId()==-1&&to)
+                    Toast.makeText(getApplicationContext(),"각도를 선택 해주세요",Toast.LENGTH_SHORT).show();
                 else
                     ent.setVisibility(View.VISIBLE);
             }
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if(rg1.getCheckedRadioButtonId()==-1)
+                if(rg1.getCheckedRadioButtonId()==-1&&to)
                     Toast.makeText(getApplicationContext(),"방향을 선택 해주세요",Toast.LENGTH_SHORT).show();
                 else
                     ent.setVisibility(View.VISIBLE);
@@ -82,11 +85,15 @@ public class MainActivity extends AppCompatActivity {
         init.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"방향과 각도를 선택 해주세요",Toast.LENGTH_LONG).show();
+                to=false;
                 rg1.clearCheck();
                 rg2.clearCheck();
                 ent.setVisibility(View.GONE);
                 img.setRotation(0);
+                to=true;
             }
         });
+
     }
 }
